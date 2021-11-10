@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-intro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-intro
+  template:
+    metadata:
+      labels:
+        app: react-intro
+    spec:
+      containers:
+      - name: react-intro
+        image: quay.io/thomasirmer/react-intro:0.0.1
+        ports:
+        - containerPort: 8080
